@@ -36,7 +36,9 @@ With lint-staged:
 
 ## How it works
 
-For the most part, it just forwards all arguments to `tsc` with one exception: the specified files will not be forwarded — instead, they will be put at the `files` property of a temporary config that will be generated next to your original `tsconfig.json`. Other than that, just read `tsc --help`.
+For the most part, it just forwards all arguments to `tsc` with one exception: the specified files will not be forwarded — instead, they will be put at the ~~`files`~~ `include` property of a temporary config that will be generated next to your original `tsconfig.json`. Other than that, just read `tsc --help`.
+
+Details on custom update in this forked version - the specified files will be put in the `include` property of the temporary `tsconfig` file. This prevents the `files` property in our default `tsconfig` from being overridden. 
 
 ## License
 
